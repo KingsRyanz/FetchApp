@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Date</title>
+    <link rel="stylesheet" href="assest/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(270deg, #14a7f0, #6eb0ea, #1d34e5, #7223e8, #3f25ec);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            height: 100vh;
+            margin: 0;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-top: 30px;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .card-header {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+
+        .btn-outline-success {
+            width: 20%;
+            padding: 10px;
+            font-size: 18px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin: 0 auto; /* Centering the button */
+            display: block; /* Making the button a block element */
+        }
+
+        .btn-outline-success:hover {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            font-weight: bold;
+            color: #343a40;
+        }
+
+        table {
+            margin-top: 20px;
+        }
+
+        th, td {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="text-center">Fetch Data from API</h2>
+                <div class="mb-3">
+                    <label for="apiUrl" class="form-label">API Endpoint URL</label>
+                    <input type="text" class="form-control" id="apiUrl" placeholder="Enter API URL">
+                </div>
+                <button class="btn btn-outline-success" onclick="fetchData()">Fetch Data</button>
+
+                <div class="mt-5">
+                    <h4>API Response:</h4>
+                    <div id="responseMessage" class="alert alert-danger d-none"></div>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered d-none" id="responseTable">
+                            <thead class="table-dark">
+                                <tr id="tableHeaders"></tr>
+                            </thead>
+                            <tbody id="tableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assest/app.js"></script>
+</body>
+</html>
